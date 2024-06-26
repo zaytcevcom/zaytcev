@@ -1,0 +1,8 @@
+.alice-carousel__dots {
+    margin: 8px 0 0 0;
+}
+
+.alice-carousel__dots-item:not(.__custom):hover,
+.alice-carousel__dots-item:not(.__custom).__active {
+    background: #B06AB3;
+}
