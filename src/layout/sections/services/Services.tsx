@@ -110,7 +110,7 @@ const items = [
     {
         title: "Microservices",
         price: 5000,
-        description: "Скоро...",
+        description: "Консультации",
         src: imgMicroservices,
     },
 ];
