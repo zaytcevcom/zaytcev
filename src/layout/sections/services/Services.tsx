@@ -26,7 +26,7 @@ const items = [
     {
         title: "HTML / CSS",
         price: 2000,
-        description: "Консультации, обучение, разработка",
+        description: "Консультации, обучение, верстка",
         src: imgHtml,
     },
     {
@@ -38,7 +38,7 @@ const items = [
     {
         title: "React",
         price: 2500,
-        description: "Скоро...",
+        description: "Консультации, обучение, разработка",
         src: imgReact,
     },
     {

@@ -91,7 +91,10 @@ docker compose run --rm frontend-node-cli yarn add -s package
 
 ### Добавить secrets
 - PRODUCTION_KEY — ssh-ключ для пользователя deploy
+
+### Добавить variables
 - PRODUCTION_HOST — IP адрес сервера
 - PRODUCTION_PORT — порт сервера
 - PROJECT_NAME — название каталога, в котором будет развернут проект
+- DOMAIN — домен по которому будет доступен проект
 - REACT_APP_SENTRY_DSN — Sentry DSN (опционально)

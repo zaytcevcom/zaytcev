@@ -84,7 +84,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.PRODUCTION_KEY }}
-          known_hosts: ${{ secrets.PRODUCTION_HOST }}
+          known_hosts: ${{ vars.PRODUCTION_HOST }}
 
       - name: Deploy
         run: make deploy
@@ -92,7 +92,8 @@ jobs:
           DOCKERHUB_USER: ${{ env.REGISTRY_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ env.REGISTRY_PASSWORD }}
           BUILD_NUMBER: ${GITHUB_RUN_NUMBER}
-          PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
-          HOST: ${{ secrets.PRODUCTION_HOST }}
-          PORT: ${{ secrets.PRODUCTION_PORT }}
-          REACT_APP_SENTRY_DSN: ${{ secrets.REACT_APP_SENTRY_DSN }}
+          HOST: ${{ vars.PRODUCTION_HOST }}
+          PORT: ${{ vars.PRODUCTION_PORT }}
+          PROJECT_NAME: ${{ vars.PROJECT_NAME }}
+          DOMAIN: ${{ vars.DOMAIN }}
+          REACT_APP_SENTRY_DSN: ${{ vars.REACT_APP_SENTRY_DSN }}

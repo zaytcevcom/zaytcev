@@ -1,24 +1,24 @@
 version: '3.9'
 services:
-  zaytcevcom:
+  portfolio:
+    container_name: portfolio
     image: ${REGISTRY}/zaytcevcom:${IMAGE_TAG}
-    container_name: zaytcevcom
     restart: always
     networks:
       - traefik-public
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik-public
-      - traefik.http.routers.zaytcevcom.rule=Host(`zaytcev.com`)
-      - traefik.http.routers.zaytcevcom.rule=Host(`zaytcev.com`) || Host(`www.zaytcev.com`)
-      - traefik.http.services.zaytcevcom.loadBalancer.server.port=80
-      - traefik.http.middlewares.zaytcevcom-redirect.redirectRegex.regex=^(https?://)www.zaytcev.com/(.*)$$
-      - traefik.http.middlewares.zaytcevcom-redirect.redirectRegex.replacement=$${1}zaytcev.com/$${2}
-      - traefik.http.middlewares.zaytcevcom-redirect.redirectRegex.permanent=true
-      - traefik.http.routers.zaytcevcom.middlewares=zaytcevcom-redirect,secure-headers
-      - traefik.http.routers.zaytcevcom.entryPoints=https
-      - traefik.http.routers.zaytcevcom.tls=true
-      - traefik.http.routers.zaytcevcom.tls.certResolver=letsEncrypt
+      - traefik.http.routers.portfolio.rule=Host(`${DOMAIN}`)
+      - traefik.http.routers.portfolio.rule=Host(`${DOMAIN}`) || Host(`www.${DOMAIN}`)
+      - traefik.http.services.portfolio.loadBalancer.server.port=80
+      - traefik.http.middlewares.portfolio-redirect.redirectRegex.regex=^(https?://)www.${DOMAIN}/(.*)$$
+      - traefik.http.middlewares.portfolio-redirect.redirectRegex.replacement=$${1}${DOMAIN}/$${2}
+      - traefik.http.middlewares.portfolio-redirect.redirectRegex.permanent=true
+      - traefik.http.routers.portfolio.middlewares=portfolio-redirect,secure-headers
+      - traefik.http.routers.portfolio.entryPoints=https
+      - traefik.http.routers.portfolio.tls=true
+      - traefik.http.routers.portfolio.tls.certResolver=letsEncrypt
     environment:
       REACT_APP_SENTRY_DSN: ${REACT_APP_SENTRY_DSN}
 

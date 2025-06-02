@@ -23,8 +23,6 @@ function App() {
         setDarkTheme(!darkMode);
     };
 
-    easterEgg();
-
     return (
         <div className="App">
             <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
@@ -36,18 +34,6 @@ function App() {
             </ThemeProvider>
         </div>
     );
-}
-
-function easterEgg() {
-    console.log(
-        '%cEaster Egg! 🐰',
-        'font-size: 20px; color: #f08080; font-weight: bold'
-    );
-
-    console.log('' +
-        'Спасибо за проявленный интерес к проекту!\n\n' +
-        'Исходный код можно изучить в репозитории:\n' +
-        'https://github.com/zaytcevcom/zaytcev');
 }
 
 export default App;
