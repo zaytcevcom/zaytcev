@@ -1,7 +1,6 @@
-version: '3.9'
 services:
-  portfolio:
-    container_name: portfolio
+  zaytcevcom:
+    container_name: zaytcevcom
     image: ${REGISTRY}/zaytcevcom:${IMAGE_TAG}
     restart: always
     networks:
