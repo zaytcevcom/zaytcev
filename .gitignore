@@ -1,6 +1,7 @@
 .idea
 .vscode
 .env
+
 # dependencies
 /node_modules
 
